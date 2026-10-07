@@ -13,4 +13,3 @@ class Task {
 
 TodoList *-- "0..*" Task : owns
 TodoList ..> Storage : uses
-@enduml
