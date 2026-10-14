@@ -1,9 +1,12 @@
-// src/main.js : creates the objects and connects them
-import { TodoService } from './TodoService.js';
-import { TodoRenderer } from './TodoRenderer.js';
-import { LocalStorageHandler } from './LocalStorageHandler.js';
+import { LocalStorageFactory }
+  from './StorageFactory.js';
+// ...
 
-const service  = new TodoService(new LocalStorageHandler());
+const factory =
+  new LocalStorageFactory();
+const service =
+  factory.createService();
+
 const renderer = new TodoRenderer('task-container');
 
 renderer.render(service);
